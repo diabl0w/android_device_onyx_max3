@@ -26,9 +26,14 @@ BOARD_VENDOR := onyx
 # Default device folder path
 DEVICE_PATH := device/$(BOARD_VENDOR)/$(TARGET_DEVICE)
 
+ALLOW_MISSING_DEPENDENCIES := true
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8953
-TARGET_NO_BOOTLOADER := true
+TARGET_NO_BOOTLOADER := false
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := Max3
 
 # Platform
 TARGET_BOARD_PLATFORM := $(shell echo $(TARGET_BOOTLOADER_BOARD_NAME) | tr  '[:upper:]' '[:lower:]')
@@ -98,6 +103,7 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_USES_MMCUTILS := true
 RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_REAL_SDCARD := true
+TARGET_COPY_OUT_VENDOR := vendor
 
 # Keymaster
 PLATFORM_VERSION := 16.1.0
@@ -105,13 +111,18 @@ PLATFORM_SECURITY_PATCH := 2099-12-31
 #TARGET_HW_DISK_ENCRYPTION := true
 
 # TWRP Build Flags
+#TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
+TARGET_RECOVERY_QCOM_RTC_FIX := true
+TW_NO_SCREEN_TIMEOUT := true
 TW_THEME := landscape_hdpi
 TW_EXCLUDE_DEFAULT_USB_INIT := true
-TW_HAS_DOWNLOAD_MODE := true
+TW_HAS_DOWNLOAD_MODE := false
+TW_HAS_EDL_MODE := true
 #TW_INCLUDE_CRYPTO := true
 #TW_CRYPTO_USE_SYSTEM_VOLD := qseecomd hwservicemanager servicemanager keymaster-3-0
-TW_INCLUDE_NTFS_3G := true
-TW_NO_SCREEN_BLANK := true
+TW_INCLUDE_NTFS_3G := false
+TW_NO_SCREEN_BLANK := false
+TW_SCREEN_BLANK_ON_BOOT := true
 #TW_INPUT_BLACKLIST := "hbtp_vm"
 TARGET_RECOVERY_DEVICE_MODULES += \
     libicuuc \
