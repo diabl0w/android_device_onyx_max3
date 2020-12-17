@@ -91,7 +91,7 @@ PLATFORM_SECURITY_PATCH := 2099-12-31
 #TARGET_HW_DISK_ENCRYPTION := true
 
 # TWRP Build Flags
-TW_THEME := portrait_hdpi
+TW_THEME := landscape_hdpi
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_HAS_DOWNLOAD_MODE := true
 #TW_INCLUDE_CRYPTO := true
