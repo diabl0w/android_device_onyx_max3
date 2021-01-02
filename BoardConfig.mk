@@ -112,6 +112,7 @@ PLATFORM_SECURITY_PATCH := 2099-12-31
 #TARGET_HW_DISK_ENCRYPTION := true
 
 # TWRP Build Flags
+TW_INCLUDE_RESETPROP := true
 TW_CUSTOM_THEME := device/onyx/max3/recovery/e_ink_theme
 TW_NO_USB_STORAGE := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/soc/7000000.ssusb/7000000.dwc3/gadget/lun%d/file
